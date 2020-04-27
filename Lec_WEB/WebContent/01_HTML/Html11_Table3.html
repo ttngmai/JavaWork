@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>테이블 과제</title>
+
+<style>
+	table, th, td {
+	    border: 1px solid black;  /* 두께, 선종류, 선색상 */
+	    border-collapse: collapse; /* border 붙이기 */
+	}
+	
+	th, td {
+		padding: 15px;	/* 셀 안쪽의 컨텐트와 border 사이 여백 */
+	}
+	
+	th {
+		text-align: left;
+	}
+</style>
+
+<style>
+	.gw {
+		background-color: ghostwhite;
+	}
+	
+	.y {
+		background-color: yellow;
+	}
+	
+	.r {
+		background-color: red;
+	}
+	
+	.blk {
+		background-color: black;
+	}
+	
+	.dbl {
+		background-color: darkblue;
+	}
+	
+	.tb table, .tb th, .tb td {
+		border: 3px solid black;
+	}
+</style>
+
+</head>
+
+<body>
+
+<table style="width: 100%">
+	<tr>
+		<td rowspan="3"></td>
+		<td colspan="3"></td>
+		
+		
+	</tr>
+	<tr>
+		
+		<td colspan="3"></td>
+		
+		
+	</tr>
+	<tr>
+		
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<br>
+
+<table style="width: 100%">
+	<tr>
+		<td rowspan="3"></td>
+		<td colspan="3"></td>
+		
+		
+	</tr>
+	<tr>
+		
+		<td colspan="2"></td>
+		
+		<td></td>
+	</tr>
+	<tr>
+		
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<br>
+
+<table style="width: 100%">
+	<tr>
+		<td></td>
+		<td colspan="2" rowspan="2"></td>
+		
+		<td rowspan="3"></td>
+	</tr>
+	<tr>
+		<td></td>
+		
+		
+		
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		
+	</tr>
+</table>
+
+<br>
+
+<table class="tb">
+	<tr>
+		<td colspan="2" class="gw"></td>
+		
+		<td colspan="2"></td>
+		
+		<td colspan="2" class="y"></td>
+		
+		<td rowspan="4" class="gw"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3" rowspan="2" class="r"></td>
+		
+		
+		<td colspan="2" class="y"></td>
+		
+		
+	</tr>
+	<tr>
+		<td rowspan="2" class="gw"></td>
+		
+		
+		
+		
+		<td></td>
+		<td></td>
+		
+	</tr>
+	<tr>
+		
+		<td colspan="2" rowspan="2" class="blk"></td>
+		
+		<td class="gw"></td>
+		<td colspan="2"></td>
+		
+		
+	</tr>
+	<tr>
+		<td class="y"></td>
+		
+		
+		<td class="gw"></td>
+		<td colspan="2" class="dbl"></td>
+		
+		<td class="r"></td>
+	</tr>
+</table>
+
+</body>
+</html>
