@@ -7,16 +7,20 @@
 <style>
 	body {
 		font-family: Dotum;
+		font-size: 14px;
 	}
 	
 	ul {
 		list-style-type: none;
 		background-color: #F7F7F7;
 		overflow: hidden;
+		padding: 0px;
 	}
 	
 	li {
 		float: left;
+		width: 25%;
+		text-align: center;
 	}
 	
 	li a {
@@ -36,21 +40,79 @@
 		
 	}
 	
-	table, th, td {
+	#calendar, #calendar th, #calendar td {
 		border: 1px solid gray;
 		border-collapse: collapse;
 	}
 	
-	th {
+	#calendar th {
 		background-color: #EEEEEE;
 	}
 	
-	td {
-		font-weight: bold;	
+	#calendar td {
+		font-weight: bold;
+		padding-left: 10px;	
+	}
+	
+	#category span {
+		margin-right: 15px;
+	}
+	
+	.empty {
+		background-color: #F7F7F7;
+	}
+	
+	#list th {
+		background-color: #EEEEEE;
+	}
+	
+	#list, #list th, #list td {
+		border-top: 1px solid gray;
+		border-bottom: 1px solid gray;
+		border-collapse: collapse;
+		text-align: center;
+	}
+	
+	#list th, #list td {
+		height: 30px;
+	}
+	
+	#list td {
+		font-size: 13px;
+	}
+	
+	#search {
+		background-color: #EEEEEE;
+		border-top: 1px solid gray;
+		border-bottom: 1px solid gray;
+	}
+	
+	div i {
+		text-decoration: none;
+		padding: 0px;
+		color: #8D8482;
+		display: inline;
+	}
+	
+	.listnum a {
+		text-decoration: none;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		color: #8D8482;
+		display: inline;
+	}
+	
+	.listnum a:hover {
+		color: white;
+		background-color: #318BCF;
 	}
 </style>
 
 </head>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <body>
 
@@ -63,16 +125,20 @@
 	</ul>
 </nav>
 
-<table width="100%">
+<h2 style="text-align: center; color: #318BCF;"><i class="fas fa-angle-left" style="color: gray;"></i>
+2015-06-17
+<i class="fas fa-angle-right" style="color: gray;"></i></h2>
+
+<table id="calendar" style="width: 100%">
 	<tr>
 		<td id="category" colspan="7" height="40px">
-			<input type="radio" name="category" value="all" checked>전체
-			<input type="radio" name="category" value="c1">창업·벤처
-			<input type="radio" name="category" value="c2">소상공인
-			<input type="radio" name="category" value="c3">판로·수출
-			<input type="radio" name="category" value="c4">R&D
-			<input type="radio" name="category" value="c5">금융·세제
-			<input type="radio" name="category" value="c6">인력
+			<input type="radio" name="category" value="all" checked><span>전체</span>
+			<input type="radio" name="category" value="c1"><span>창업·벤처</span>
+			<input type="radio" name="category" value="c2"><span>소상공인</span>
+			<input type="radio" name="category" value="c3"><span>판로·수출</span>
+			<input type="radio" name="category" value="c4"><span>R&D</span>
+			<input type="radio" name="category" value="c5"><span>금융·세제</span>
+			<input type="radio" name="category" value="c6"><span>인력</span>
 		</td>
 	</tr>
 	<tr>
@@ -85,7 +151,7 @@
 		<th>토</th>
 	</tr>
 	<tr>
-		<td height="40px"></td>
+		<td class="empty" height="40px"></td>
 		<td>1</td>
 		<td>2</td>
 		<td>3</td>
@@ -94,7 +160,7 @@
 		<td>6</td>
 	</tr>
 	<tr>
-		<td height="40px">7</td>
+		<td height="40px" style="background-color: #D1FDFD">7</td>
 		<td>8</td>
 		<td>9</td>
 		<td>10</td>
@@ -124,14 +190,73 @@
 		<td height="40px">28</td>
 		<td>29</td>
 		<td>30</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td class="empty"></td>
+		<td class="empty"></td>
+		<td class="empty"></td>
+		<td class="empty"></td>
 	</tr>
 </table>
 
+<p style="margin-top: 30px;"><span style="color: red;"><b>· 2015년 6월 7일, 전체</b></span> 검색결과, <b>진행중인 사업</b>은 <span style="color: red;"><b>총 614 건</b></span> 입니다.</p>
 
+<table id="list" style="width: 100%">
+	<tr>
+		<th>번호</th>
+		<th>지원사업명</th>
+		<th>주관부처</th>
+		<th>신청기간</th>
+		<th>조회</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+		<td>중소기업청</td>
+		<td>2015.06.04 ~ 2015.06.30</td>
+		<td>731</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+		<td>중소기업청</td>
+		<td>2015.06.04 ~ 2015.06.30</td>
+		<td>731</td>
+	</tr>
+	<tr>
+		<td>614</td>
+		<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+		<td>중소기업청</td>
+		<td>2015.06.04 ~ 2015.06.30</td>
+		<td>731</td>
+	</tr>
+	<tr>
+		<td>614</td>
+		<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+		<td>중소기업청</td>
+		<td>2015.06.04 ~ 2015.06.30</td>
+		<td>731</td>
+	</tr>
+</table>
+
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+	<a href=""><i class="fas fa-angle-double-left fa-border fa-fw"></i></a>
+	<a href=""><i class="fas fa-angle-left fa-border fa-fw"></i></a>
+	<span class="listnum"><a href="">1</a></span>
+	<span class="listnum"><a href="">2</a></span>
+	<span class="listnum"><a href="">3</a></span>
+	<span class="listnum"><a href="">4</a></span>
+	<span class="listnum"><a href="">5</a></span>
+	<a href=""><i class="fas fa-angle-double-right fa-border fa-fw"></i></a>
+	<a href=""><i class="fas fa-angle-right fa-border fa-fw"></i></a>
+</div>
+
+<table id="search" style="width: 100%; margin-top: 30px;">
+	<tr>
+		<td align="center">
+			<input name="search" type="text" size="50" style="margin-top: 20px; margin-bottom: 20px;">
+			<button type="button" style="background-color: #318BCF; color: white;">검색</button>
+		</td>
+	</tr>
+</table>
 
 </body>
 </html>
