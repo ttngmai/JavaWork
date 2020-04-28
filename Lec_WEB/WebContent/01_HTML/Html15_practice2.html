@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>캘린더 폼 작성</title>
+
+<style>
+	body {
+		font-family: Dotum;
+	}
+	
+	ul {
+		list-style-type: none;
+		background-color: #F7F7F7;
+		overflow: hidden;
+	}
+	
+	li {
+		float: left;
+	}
+	
+	li a {
+		text-decoration: none;
+		padding: 16px;
+		color: #8D8482;
+		display: block;
+	}
+	
+	li a:hover {
+		color: white;
+		background-color: #318BCF;
+	}
+	
+	#category {
+		color: #8D8482;
+		
+	}
+	
+	table, th, td {
+		border: 1px solid gray;
+		border-collapse: collapse;
+	}
+	
+	th {
+		background-color: #EEEEEE;
+	}
+	
+	td {
+		font-weight: bold;	
+	}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+	<ul>
+		<li><a href=""><b>정책차림표</b></a></li>
+		<li><a href=""><b>미리보는 지원사업</b></a></li>
+		<li><a href=""><b>마감임박 지원사업</b></a></li>
+		<li><a href=""><b>접수중인 지원사업</b></a></li>
+	</ul>
+</nav>
+
+<table width="100%">
+	<tr>
+		<td id="category" colspan="7" height="40px">
+			<input type="radio" name="category" value="all" checked>전체
+			<input type="radio" name="category" value="c1">창업·벤처
+			<input type="radio" name="category" value="c2">소상공인
+			<input type="radio" name="category" value="c3">판로·수출
+			<input type="radio" name="category" value="c4">R&D
+			<input type="radio" name="category" value="c5">금융·세제
+			<input type="radio" name="category" value="c6">인력
+		</td>
+	</tr>
+	<tr>
+		<th height="30px">일</th>
+		<th>월</th>
+		<th>화</th>
+		<th>수</th>
+		<th>목</th>
+		<th>금</th>
+		<th>토</th>
+	</tr>
+	<tr>
+		<td height="40px"></td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td height="40px">7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>10</td>
+		<td>11</td>
+		<td>12</td>
+		<td>13</td>
+	</tr>
+	<tr>
+		<td height="40px">14</td>
+		<td>15</td>
+		<td>16</td>
+		<td>17</td>
+		<td>18</td>
+		<td>19</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td height="40px">21</td>
+		<td>22</td>
+		<td>23</td>
+		<td>24</td>
+		<td>25</td>
+		<td>26</td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<td height="40px">28</td>
+		<td>29</td>
+		<td>30</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
