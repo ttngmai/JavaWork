@@ -25,8 +25,7 @@
 					"@dbeaver-use-rule-hint@": "false",
 					"@dbeaver-use-meta-optimizer@": "false"
 				},
-				"auth-model": "oracle_native",
-				"handlers": {}
+				"auth-model": "oracle_native"
 			}
 		}
 	},
