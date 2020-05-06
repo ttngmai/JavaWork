@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    [class*="col-"] {
+	float: left;
+    padding: 15px;
+    width: 100%;
+    border: 3px solid white;
+    font-size: 30px;
+    }
+
+    .header div {
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .div-A {display: none;}
+    .div-B {height: 100px;}
+    .div-C {height: 80px;}
+    .div-D {
+        height: 240px;
+        border: 3px solid gray;
+    }
+    .div-E, .div-F, .div-G {
+        display: inline-block;
+        width: 33.33%;
+    }
+    .div-H {height: 100px;}
+
+    /* 2. 600px 이상 : tablet */
+    @media screen and (min-width: 600px){
+        /* Tablet */
+        .col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+        .col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+        .col-m-3 {width: 25%;}
+        .col-m-4 {width: 33.33%;}
+        .col-m-5 {width: 41.66%;}
+        .col-m-6 {width: 50%;}
+        .col-m-7 {width: 58.33%;}
+        .col-m-8 {width: 66.66%;}
+        .col-m-9 {width: 75%;}
+        .col-m-10 {width: 83.33%;}
+        .col-m-11 {width: 91.66%;}
+        .col-m-12 {width: 100%;} 
+
+        .col-m-2::after {content: ":2";}
+        .col-m-3::after {content: ":3";}
+        .col-m-9::after {content: ":9";}
+        .col-m-10::after {content: ":10";}
+
+        .div-A {display: inline-block;}
+
+        .div-A, .div-B {height: 100px;}
+        .div-C {height: 300px;}
+        .div-D {height: 300px;}
+        .div-E, .div-F {height: 150px;}
+        .div-G, .div-H {height: 100px;}
+    }
+
+    /* 3. 767px 이상 : pc */
+    @media screen and (min-width: 768px){
+        .col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+        .col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        .col-2::after {content: ":2";}
+        .col-4::after {content: ":4";}
+        .col-6::after {content: ":6";}
+        .col-8::after {content: ":8";}
+        .col-12::after {content: ":12";}
+
+        .div-E, .div-F, .div-G {height: 100px;}
+    }
+</style>
+
+<body>
+    <div class="header">
+        <div class="div-A col-4 col-m-2" style="background-color: mediumpurple;">A</div>
+        <div class="div-B col-8 col-m-10" style="background-color: rebeccapurple;">B</div>
+    </div>
+    
+    <div class="div-C col-2 col-m-2" style="background-color: cyan;">C</div>
+    
+    <div class="div-D col-6 col-m-8" style="background-color: white;">D</div>
+
+    <div class="div-E col-4 col-m-2" style="background-color: wheat;">E</div>
+    <div class="div-F col-4 col-m-2" style="background-color: teal;">F</div>
+
+    <div class="div-G col-4 col-m-3" style="background-color: darksalmon;">G</div>
+    <div class="div-H col-12 col-m-9" style="background-color: gold;">H</div>
+</body>
+</html>
