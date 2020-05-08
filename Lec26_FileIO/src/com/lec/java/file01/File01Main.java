@@ -3,10 +3,10 @@ package com.lec.java.file01;
 import java.util.Scanner;
 
 /* 스트림 (stream)
-	[도착지]							[출발지]
+	[도착지]						  [출발지]
 	Program <--- InputStream <--- Source(Keyboard, Mouse, File, Network)
 	
-	[출발지]							[도착지]
+	[출발지]						   [도착지]
 	Program ---> OutputStream ---> Destination(Monitor, Beam, File, Network)
 
 
