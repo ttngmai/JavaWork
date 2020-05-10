@@ -40,7 +40,7 @@ nav#top_menu {
 
 nav#top_menu ul {
 	list-style: none;
-	font-faminly: Verdana, Geneva, sans-serif;
+	font-family: Verdana, Geneva, sans-serif;
 	font-size: 13px;
 	font-weight: 100;
 	color: #333;
@@ -107,7 +107,7 @@ article#front {
 	width: 910px;
 	min-height: 150px;
 	background: #ebebeb;
-	pdding: 10px; /*!important;*/
+	padding: 10px; /*!important;*/
 	
 	/*padding: 10px 2px;*/
 	border-radius: 10px;
@@ -261,7 +261,7 @@ footer {
 
 footer hr {
 	width: 900px;
-	margin: 0 0 0 15px; !importnat;
+	margin: 0 0 0 15px !important;
 	margin: 0 0 0 35px;
 }
 
