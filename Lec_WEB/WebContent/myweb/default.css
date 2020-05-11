@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#wrap {
+#wrap{
     margin-top: 0px;
     margin-bottom: 0px;
 	margin-right: auto;
@@ -12,6 +12,10 @@
     font-family: Helvetica, sans-serif;
     text-align: left;
     font-size: 16px;
+}
+
+#menu{
+    display: none;
 }
 
 #menu ul{
@@ -43,35 +47,104 @@
     color: white;
 }
 
-.banner{
+#banner-s, #banner{
     text-align: center;
 }
 
-.banner img{
+#banner-s img{
     max-width: 100%;
     height: auto;
 }
 
-#recommend, #special{
+#banner img{
+    display: none;
+    max-width: 100%;
+    height: auto;
+}
+
+div#recommend, div#special{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#special {
+#special{
     background-color: #FBF7F5;
 }
 
-#recommend .sh, #special .sh{
-    margin: 0px 0px 10px 0px;
-    font-size: 20px;
+h2 {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+#banner-s h2 {
+    margin-top: 7.5px;
 }
 
 .item{
-    margin: 0px 7.5px;
     display: inline-block;
+    margin: 0px 7.5px;
+    text-align: center;
     width: 41.66%;
     height: auto;
+}
+
+.itemImg{
+    position: relative;
+    display: inline-block;
+    margin: 0px 7.5px;
+    height: auto;
+}
+
+/* 상품이미지 위에 마우스 오버시 효과주기 */
+.itemImg span.text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: none;
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+}
+
+.itemImg::before, .itemImg::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    transition: all .8s;
+}
+
+.itemImg::before{
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 0;
+}
+
+.itemImg::after{
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: 0;
+}
+
+.itemImg:hover span.text {display: block;}
+.itemImg:hover::before {width:95%;}
+.itemImg:hover::after {height:95%;}
+/* ------------------------------------ */
+
+.itemInfo{
+    display: inline-block;
 }
 
 .itemInfo p{
@@ -83,17 +156,19 @@
     font-size: 14px;
 }
 
-.item img{
+.itemImg img{
     max-width: 100%;
     height: auto;
 }
 
-div.clear {
-    clear: both;
+.a-m{
+    display: none;
 }
 
-.a-m {
-    display: none;
+#s-menu{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
 }
 
 
