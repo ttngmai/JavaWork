@@ -19,11 +19,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script>
-
-// TODO
-
-</script>
 </head>
 <body>
 
@@ -35,7 +30,16 @@
 
 <script>
 
-// TODO
+// :animated 라는 selector 는
+// 현재 animation 중인 element 에 적용
+$("#run").click(function(){
+  $("div:animated").toggleClass("colored");
+});
+
+function animateIt(){
+  $("#mover").slideToggle("slow", animateIt);
+}
+animateIt();
 
 </script>
 

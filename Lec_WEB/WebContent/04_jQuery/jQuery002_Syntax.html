@@ -8,7 +8,7 @@
 <!-- 
 기본적은 jQuery 구문은 
 
-HTML element 선택 +  그 element 에 동작(action) 수행
+HTML element 선택 + 그 element 에 동작(action) 수행
 
 	기본구문:
 	
@@ -22,29 +22,33 @@ HTML element 선택 +  그 element 에 동작(action) 수행
 	$("p").hide() - 모든 <p> element 를 숨긴다
 	$(".test").hide() - class="test" 인 모든 element 를 숨긴다 
 	$("#test").hide() - id="test" 인 모든 element 를 숨긴다
-
  -->
  
  <script>
 // 	기본적으로 jQuery을 사용하는 웹페이지들은
 //	다음 코드로 시작함
 //$(document).ready(함수);
-
-// TODO
+$(document).ready(function(){
+	alert('ready(). 함수')
+});
 
 //'document' 즉, 웹문서의 로딩이 '완료'되면
 //ready() 의 매개변수로 주어진 함수를 수행
-
-// TODO
-
+$(document).ready(function(){
+	alert('ready(). 함수2')
+});
 
 // 축약된 형태도 많이 사용
 //$(함수);
+$(function(){
+	alert('누구냐 넌')
+});
 
-// TODO
-
-
-// TODO
+$(document).ready(function(){
+	$("button").click(function(){
+		$("p").hide();
+	});
+});
 
 </script>
  

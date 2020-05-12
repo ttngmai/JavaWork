@@ -109,9 +109,10 @@ h2 {
     transform: translateY(-50%);
     display: none;
     width: 100%;
+    font-family: Helvetica, sans-serif;
     font-size: 24px;
+    font-weight: 600;
     color: #fff;
-    font-weight: 900;
     text-align: center;
 }
 
@@ -127,20 +128,21 @@ h2 {
 }
 
 .itemImg::before{
+    background-color: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.itemImg::after{
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     width: 0;
 }
 
-.itemImg::after{
-    border-left: 2px solid #fff;
-    border-right: 2px solid #fff;
-    height: 0;
-}
-
 .itemImg:hover span.text {display: block;}
-.itemImg:hover::before {width:95%;}
-.itemImg:hover::after {height:95%;}
+.itemImg:hover::before {opacity: 0.4;}
+.itemImg:hover::after {width:95%;}
 /* ------------------------------------ */
 
 .itemInfo{
