@@ -40,36 +40,34 @@ button {
 
  $(document).ready(function(){
 	 
-	 // 버튼 클릭되면 일단 selected 클래스 제거
-	 $("button").click(function(){
+	// 버튼 클릭되면 일단 selected 클래스 제거
+	$("button").click(function(){
 		$("*").removeClass("selected");
 	});
-	 //---------------------------------------
-	 // first() select 된것들중 첫번째
-	 $("#btn11").click(function(){
-	 	// TODO
-	 });
-
-	 // last() select 된것들중 마지막
-	 $("#btn12").click(function(){
-		 	// TODO
-	 });
+	//---------------------------------------
+	// first() select 된것들중 첫번째
+	$("#btn11").click(function(){
+		$("div").first().addClass("selected");
+	});
+	// last() select 된것들중 마지막
+	$("#btn12").click(function(){
+		$("div").last().addClass("selected"); 
+	});
 
 	// eq(i) 인덱스로 선택 가능
-	 $("#btn13").click(function(){
-		 	// TODO
+	$("#btn13").click(function(){
+		$("div").eq(1).addClass("selected");
 	});
 	
 	// filter() 
-	 $("#btn14").click(function(){
-		 	// TODO
+	$("#btn14").click(function(){
+		$("div").filter(".intro").addClass("selected");
 	});
 	
 	// not()
-	 $("#btn15").click(function(){
-		 	// TODO
+	$("#btn15").click(function(){
+		$("div").not(".intro").addClass("selected");
 	});
-	 
 	 
  });
  

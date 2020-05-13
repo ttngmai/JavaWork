@@ -57,12 +57,13 @@ function getAddr(){
 	$.ajax({
 		url : "http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"  //인터넷망
 		, type : "post"
-		, data : {  // post request 에 필요한 parameter
-			currentPage : $("#form").find('[name="currentPage"]').val()
-			, countPerPage : $("#form").find('[name="countPerPage"]').val()
-			, confmKey : $("#form").find('[name="confmKey"]').val()
-			, keyword : $("#form").find('[name="keyword"]').val()
-		}
+		, data : $("#form").serialize()
+		// , data : {  // post request 에 필요한 parameter
+		// 	currentPage : $("#form").find('[name="currentPage"]').val()
+		// 	, countPerPage : $("#form").find('[name="countPerPage"]').val()
+		// 	, confmKey : $("#form").find('[name="confmKey"]').val()
+		// 	, keyword : $("#form").find('[name="keyword"]').val()
+		// }
 		, dataType: "jsonp"   
 		, crossDomain: true // cross-domain 문제 (JSON with Padding)
 
@@ -71,7 +72,6 @@ function getAddr(){
 			$("#list").html("");
 			makeList(xmlStr.returnXml);
 		}
-		
 	});
 }
 
