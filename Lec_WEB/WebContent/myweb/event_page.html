@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/default.css" rel="stylesheet" type="text/css"/>
+	<link href="CSS/mobile_first.css" rel="stylesheet" type="text/css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="effect.js" type="text/javascript"></script>
+
+<body>
+<div id="wrap">
+	<nav id="topMenu" class="col-m-12">
+		<div class="menuList">
+			<span><a href="#">꽃다발</a></span>
+			<span><a href="#">소품</a></span>
+			<span><a href="#">클래스</a></span>
+			<span><a href="event_page.html">EVENT</a></span>
+		</div>
+  </nav>
+
+  <div id="eventBanner-s">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbnfdLw%2FbtqD6PHt0BC%2FOKaNnZlpVkAg1S1impPUg0%2Fimg.jpg">
+  </div>
+  <div id="eventBanner" class="col-m-12">
+  <img src="../myweb/img/eventBanner.jpg">
+  </div>
+
+  <input type="checkbox" id="menuIcon">
+  <label for="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div id="sidebar">
+    <div><a href="#">꽃다발</a></div>
+    <div><a href="#">소품</a></div>
+    <div><a href="#">클래스</a></div>
+    <div><a href="#">Event</a></div>
+    <div><a href="index.html">메인 페이지</a></div>
+  </div>
+
+  <form action="https://www.w3schools.com/action_page.php" method="get">
+    <div>이름</div>
+    <input type="text" name="name"" required><span class="important">*</span>
+    <div>휴대폰 번호</div>
+    <input type="text" name="phoneNum">
+    <br><br>
+  </form>
+  <button onclick="chkSubmit5();">응모하기</button>
+
+</div>
+</body>
+</html>

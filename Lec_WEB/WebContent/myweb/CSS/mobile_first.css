@@ -16,15 +16,14 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 
-    #banner-s {
-        display: none;
-    }
-
-    #menu {
+    #topMenu {
         display: inline-block;
     }
 
-    #banner img {
+    #mainBanner-s, #eventBanner-s {
+        display: none;
+    }
+    #mainBanner, #eventBanner{
         display: block;
         margin-bottom: 40px;
     }
@@ -32,7 +31,6 @@
     .itemImg {
         width: 100%;
     }
-
     .a-m {display: inline-block;}
 }
 
