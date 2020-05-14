@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#wrap {
+body {
     margin-top: 0;
     margin-bottom: 0;
 	margin-right: auto;
@@ -26,31 +26,40 @@ h2 {
 
 button { /* 버튼 기본 스타일 */
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px 10px;
     width: 100%;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Helvetica, sans-serif;
 }
-button:hover {
-    background-color: #409640;
+button:active {
+    background-color: lightblue;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 /* 탑 메뉴 */
+
 #topMenu {
     display: none;
+    width: 100%;
 }
 #topMenu div {
     display: inline-block;
+    height: 50px;
+    float: left;
     margin: 10px 0;
     padding: 0;
     text-align: center;
-}
-#topMenu .menuList {
-    margin-left: 10%;
-    width: 80%;
 }
 #topMenu span {
     display: inline-block;
@@ -84,11 +93,12 @@ button:hover {
     overflow: auto;
     padding-top: 60px;
     
-    /* display: none; */
+    display: none;
 }
 .modalContent {
     background-color: #fff;
-    width: 80%;
+    width: 60%;
+    max-width: 500px;
     margin: 5px auto;
     border: 1px solid #888;
 }
@@ -96,6 +106,11 @@ button:hover {
     position: relative;
     margin: 10px 10px;
     text-align: center;
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
 }
 
 .close {
@@ -112,9 +127,43 @@ button:hover {
     cursor: pointer;
 }
 
-img.avatar {
-    width: 25%;
-    border-radius: 50%;
+.container {
+    padding: 16px;
+}
+.container button {
+    margin-top: 8px;
+}
+.ss {
+    margin: 10px 0;
+}
+.ss a {
+    text-decoration: none;
+    color: #333;
+}
+.ss .float-l {
+    float: left;
+}
+.ss .float-r {
+    float: right;
+}
+.loginBtn {
+    border: 1px solid #000;
+}
+.loginBtn:hover {
+    background-color: #373737;
+    color: #fff;
+}
+.kakaoLoginBtn {
+    background-color: #FFEB00;
+    color: #3C1E1E;
+}
+.naverLoginBtn {
+    background-color: #27D34A;
+    color: #fff;
+}
+.facebookLoginBtn {
+    background-color: #4469B0;
+    color: #fff;
 }
 /* -------------------------------------------------- */
 
@@ -186,7 +235,7 @@ img.avatar {
 /* -------------------------------------------------- */
 
 /* 상품이미지 위에 마우스 오버시 효과주기 */
-.itemImg span.text {
+.itemImg .text {
     position: absolute;
     top: 50%;
     left: 0;
@@ -198,6 +247,9 @@ img.avatar {
     font-weight: 600;
     color: #fff;
     text-align: center;
+}
+.itemImg .price {
+    font-size: 18px;
 }
 .hoverEffect1, .hoverEffect2 {
     content: '';

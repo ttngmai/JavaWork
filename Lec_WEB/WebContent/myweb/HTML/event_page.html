@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/default.css" rel="stylesheet" type="text/css"/>
+	<link href="../CSS/mobile_first.css" rel="stylesheet" type="text/css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../JS/effect.js" type="text/javascript"></script>
+<script src="../JS/login.js" type="text/javascript"></script>
+
+<body>
+  <nav id="topMenu">
+		<div class="col-m-2"></div>
+		<div class="menuList col-m-8">
+			<span><a href="index.html">메인 페이지</a></span>
+			<span><a href="#">꽃다발</a></span>
+			<span><a href="#">소품</a></span>
+			<span><a href="#">클래스</a></span>
+			<span><a href="event_page.html">EVENT</a></span>
+		</div>
+		<div class="menu-r col-m-2">
+			<span><a class="login" href="#">Login</a></span>
+			<span><a href="signIn.html">회원가입</a></span>
+		</div>
+  </nav>
+  
+	<div id="loginModal" class="modal">
+		<form class="modalContent" action="https://www.w3schools.com/action_page.php" method="get">
+			<div class="imgContainer">
+				<span class="close">&times;</span>
+				<img src="../img/avatar.png" class="avatar" alt="Avatar">
+			</div>
+
+			<div class="container">
+				<label for="userID"></label>
+				<input type="text" placeholder="아이디" name="userID" required>
+				<label for="psw"></label>
+				<input type="password" placeholder="비밀번호" name="psw" required>
+		
+				<div class="ss">
+					<a class="float-l" href="#">회원가입</a>
+					<a class="float-r" href="#">내 계정 찾기</a>
+				</div>
+
+				<button class="loginBtn" type="submit">Login</button>
+				<button type="button" class="kakaoLoginBtn">카카오 로그인</button>
+				<button type="button" class="naverLoginBtn">네이버 로그인</button>
+				<button type="button" class="facebookLoginBtn">페이스북 로그인</button>
+			</div>
+		</form>
+	</div>
+
+  <div id="eventBanner-s">
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbnfdLw%2FbtqD6PHt0BC%2FOKaNnZlpVkAg1S1impPUg0%2Fimg.jpg">
+  </div>
+  <div id="eventBanner" class="col-m-12">
+    <img src="../img/eventBanner.jpg">
+  </div>
+
+  <input type="checkbox" id="menuIcon">
+    <label for="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div id="sidebar">
+      <div><a href="index.html">메인 페이지</a></div>
+      <div><a href="#">꽃다발</a></div>
+      <div><a href="#">소품</a></div>
+      <div><a href="#">클래스</a></div>
+      <div><a href="#">Event</a></div>
+    </div>
+
+</div>
+</body>
+</html>
