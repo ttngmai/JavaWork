@@ -44,11 +44,9 @@ input[type=text], input[type=password] {
     padding: 12px;
     border: 1px solid #ccc;
     display: inline-block;
-    box-sizing: border-box;
 }
 
 /* 탑 메뉴 */
-
 #topMenu {
     display: none;
     width: 100%;
@@ -79,6 +77,18 @@ input[type=text], input[type=password] {
     background-color: lightblue;
     color: #fff;
 }
+.menu-l .logo {
+    margin-left: 25%;
+    padding: 0 5px;
+    width: 60px;
+    height: 100%;
+}
+.menu-l .logo:hover {
+    cursor: pointer;
+}
+.menu-r {
+    font-size: 14px;
+}
 /* -------------------------------------------------- */
 
 /* 로그인 modal */
@@ -100,11 +110,12 @@ input[type=text], input[type=password] {
     width: 60%;
     max-width: 500px;
     margin: 5px auto;
+    padding: 16px;
     border: 1px solid #888;
 }
-.imgContainer {
+.modalContent .header {
     position: relative;
-    margin: 10px 10px;
+    padding-bottom: 16px;
     text-align: center;
 }
 
@@ -121,31 +132,35 @@ img.avatar {
     font-weight: bold;
     color: #000;
 }
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #f00;
     cursor: pointer;
 }
 
-.container {
-    padding: 16px;
+.header :nth-child(1) {
+    padding-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
-.container button {
+
+#container button {
     margin-top: 8px;
 }
-.ss {
+
+.middle {
     margin: 10px 0;
 }
-.ss a {
+.middle a {
     text-decoration: none;
     color: #333;
 }
-.ss .float-l {
+.middle .float-l {
     float: left;
 }
-.ss .float-r {
+.middle .float-r {
     float: right;
 }
+
 .loginBtn {
     border: 1px solid #000;
 }
@@ -168,20 +183,18 @@ img.avatar {
 /* -------------------------------------------------- */
 
 /* 메인 배너 */
-#mainBanner-s, #mainBanner, #eventBanner-s, #eventBanner {
+#banner-s, #banner {
     text-align: center;
 }
-#mainBanner, #eventBanner {
-    display: none;
-}
-#mainBanner-s img, #eventBanner-s img {
+#banner-s img {
     max-width: 100%;
     height: auto;
 }
-#mainBanner-s h2 {
+#banner-s h2 {
     margin-top: 7.5px;
 }
-#mainBanner img, #eventBanner img {
+#banner img {
+    display: none;
     width: 100%;
     height: auto;
 }
@@ -213,7 +226,7 @@ img.avatar {
     height: auto;
     cursor: pointer;
 }
-.itemImg > img {
+.itemImg img {
     width: 100%;
     height: auto;
 }

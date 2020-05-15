@@ -20,10 +20,10 @@
         display: inline-block;
     }
 
-    #mainBanner-s, #eventBanner-s {
+    #banner-s {
         display: none;
     }
-    #mainBanner, #eventBanner{
+    #banner {
         display: block;
         margin-bottom: 40px;
     }

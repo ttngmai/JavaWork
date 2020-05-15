@@ -4,11 +4,9 @@ $(document).ready(function(){
         var windowWidth = $(window).width();
         if(windowWidth > 600) {
             // 메인 배너 fadeIn
-            var $mainBanner = $("#mainBanner, #eventBanner");
+            var $banner = $("#banner img");
 
-            $mainBanner.css("display", "none");
-
-            $mainBanner.fadeIn(1000);
+            $banner.fadeIn(1000);
             //--------------------------------------------------
             
             // 상품 목록이 좌우에서 슬라이드 하면서 나타남
@@ -22,7 +20,7 @@ $(document).ready(function(){
                 right : "-100%",
                 opacity : 0});
 
-            $.when($mainBanner).then(function(){
+            $.when($banner).then(function(){
                 $recommend.animate({
                     left: 0,
                     opacity: 1

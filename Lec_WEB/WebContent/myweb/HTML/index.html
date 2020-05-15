@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>LSH : 메인</title>
 	<link href="../CSS/default.css" rel="stylesheet" type="text/css"/>
 	<link href="../CSS/mobile_first.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,33 +16,38 @@
 
 <body>
 	<nav id="topMenu">
-		<div class="col-m-2"></div>
-		<div class="menuList col-m-8">
+		<div class="menu-l col-m-3">
+			<img src="../img/logo.png" class="logo" alt="Logo">
+		</div>
+		<div class="menuList col-m-6">
 			<span><a href="#">꽃다발</a></span>
 			<span><a href="#">소품</a></span>
 			<span><a href="#">클래스</a></span>
 			<span><a href="event_page.html">EVENT</a></span>
 		</div>
-		<div class="menu-r col-m-2">
+		<div class="menu-r col-m-3">
 			<span><a class="login" href="#">Login</a></span>
+			<span><a href="signIn.html">회원가입</a></span>
 		</div>
 	</nav>
 
 	<div id="loginModal" class="modal">
 		<form class="modalContent" action="https://www.w3schools.com/action_page.php" method="get">
-			<div class="imgContainer">
+
+			<div class="header">
+				<div><span>로그인</span></div>
 				<span class="close">&times;</span>
 				<img src="../img/avatar.png" class="avatar" alt="Avatar">
 			</div>
 
-			<div class="container">
+			<div id="container">
 				<label for="userID"></label>
 				<input type="text" placeholder="아이디" name="userID" required>
-				<label for="psw"></label>
-				<input type="password" placeholder="비밀번호" name="psw" required>
-		
-				<div class="ss">
-					<a class="float-l" href="#">회원가입</a>
+				<label for="pswd"></label>
+				<input type="password" placeholder="비밀번호" name="pswd" required>
+
+				<div class="middle">
+					<a class="float-l" href="signIn.html">회원가입</a>
 					<a class="float-r" href="#">내 계정 찾기</a>
 				</div>
 
@@ -54,12 +59,12 @@
 		</form>
 	</div>
 
-	<div id="mainBanner-s">
+	<div id="banner-s">
 		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FP7HqX%2FbtqD5JFZ4G9%2FAdLzVfu42dABNgtvnI2qik%2Fimg.jpg">
 		<h2>MOTHER’S DAY PLANTS & GIFTS</h2>
 	</div>
 
-	<div id="mainBanner" class="col-m-12">
+	<div id="banner" class="col-m-12">
 		<img src="https://assets.eflorist.com/site/EF-9689/Category%20Headers/MOTHERSDAY-MAIN-BANNER-NODELWILL.jpg">
 	</div>
 

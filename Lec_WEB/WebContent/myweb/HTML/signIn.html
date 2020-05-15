@@ -3,9 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LSH : 회원가입</title>
+    <link href="../CSS/signIn.css" rel="stylesheet" type="text/css"/>
 </head>
+
+<script src="../JS/signin.js" type="text/javascript"></script>
+
 <body>
-    
+    <form name="signinForm" action="https://www.w3schools.com/action_page.php"
+    onsubmit="return checkSubmit()">
+        <div class="header">
+            <img src="../img/logo.png">
+        </div>
+        <div id="container">
+            <div class="rowGroup">
+                <div class="row">
+                    <h3>
+                        <label for="userID"><span>아이디</span>
+                        <span id="idWarn" class="warnText"></span>
+                    </h3>
+                    <input type="text" name="userID" placeholder="아이디" required/>
+                </div>
+                <div class="row">
+                    <h3>
+                        <label for="pswd"><span>비밀번호</span>
+                        <span class="smText">(8~15자 숫자, 영문 조합)</span>
+                        <span id="pswdWarn" class="warnText"></span>
+                    </h3>
+                    <input type="text" name="pswd" placeholder="비밀번호" maxlength="15" required/>
+                </div>
+                <div class="row">
+                    <h3>
+                        <label for="pswd2"><span>비밀번호 재확인</span>
+                    </h3>
+                    <input type="text" name="pswd2" placeholder="비밀번호 재확인" maxlength="15" required/>
+                </div>
+            </div>
+
+            <div class="rowGroup">
+                <div class="row">
+                    <h3>
+                        <label for="name"><span>이름</span>
+                    </h3>
+                    <input type="text" name="name" placeholder="이름" required/>
+                </div>
+                <div class="row birthDate">
+                    <h3>
+                        <label for="year"><span>생년월일</span>
+                    </h3>
+                    <span><input type="text" name="year" maxlength="4" placeholder="년(4자)" required/></span>
+                    <span>
+                        <select name="month">
+                            <option value>월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </span> 
+                    <span><input type="text" name="date" maxlength="2" placeholder="일" required/></span>
+                </div>
+            </div>
+
+            <div class="rowGroup">
+                <div class="row">
+                    <h3>
+                        <label for="email"><span>이메일</span>
+                        <span class="smText">(선택)</span>
+                        <span id="emailWarn" class="warnText"></span>
+                    </h3>
+                    <span>
+                        <input type="text" name="email" placeholder="이메일"/>
+                    </span>
+                </div>
+                <div class="row">
+                    <h3>
+                        <label for="phoneNum"><span>휴대전화</span>
+                    </h3>
+                    <span><input type="text" name="phoneNum" maxlength="16" placeholder="- 빼고 입력" required/></span>
+                </div>
+            </div>
+            <input type="submit" id="join" value="가입하기">
+        </div>
+    </form>
 </body>
 </html>
