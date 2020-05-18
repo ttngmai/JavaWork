@@ -1,0 +1,17 @@
+div.event {
+    display: inline-block;
+    text-align: center;
+}
+#eventImg {
+    width: 80%;
+}
+
+.itemSet {
+    width: 100%;
+}
+
+.cost {
+    color: gray;
+    text-decoration: line-through;
+    margin-right: 10px;
+}

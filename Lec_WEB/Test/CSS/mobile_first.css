@@ -19,6 +19,10 @@
     #topMenu {
         display: block;
     }
+
+    #banner-s {
+        display: none;
+    }
 }
 
 /* 3. 767px 이상 : pc */

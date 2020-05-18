@@ -1,14 +1,10 @@
 $(document).ready(function(){
     // 로그인
-    var $login1 = $(".login")[0];
-    var $login2 = $(".sbLoginBtn")[0];
+    var $login = $(".login")[0];
     var $modal = $("#loginModal");
     var $close = $(".close")[0];
     
-    $login1.onclick = function(){
-        $modal.css("display", "block");
-    }
-    $login2.onclick = function(){
+    $login.onclick = function(){
         $modal.css("display", "block");
     }
     
