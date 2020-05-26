@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.lec.beans.*" %>    
 
-<%  // Controller 로부터 결과 데이터 받음.
-	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
+<%	// Controller 로부터 결과 데이터 받음.
+	WriteDTO[] arr = (WriteDTO[])request.getAttribute("list");
 %>
 
 <!DOCTYPE html>
@@ -21,17 +21,16 @@ table, th, td {
 </style>
 </head>
 <body>
-
-		<hr>
-		<h2>리스트</h2>
-		<table>
-			<tr>
-				<th>UID</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>조회수</th>
-				<th>등록일</th>
-			</tr>
+	<hr>
+	<h2>리스트</h2>
+	<table>
+		<tr>
+			<th>UID</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+			<th>등록일</th>
+		</tr>
 <%
 	if(arr != null){
 		for(int i = 0; i < arr.length; i++){
@@ -47,24 +46,8 @@ table, th, td {
 		} // end for
 	} // end if
 %>
-		</table>
-		<br>
-		<button onclick="location.href='write.do'">신규등록</button>
-
+	</table>
+	<br>
+	<button onclick="location.href='write.do'">신규등록</button>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
