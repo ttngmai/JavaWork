@@ -76,8 +76,6 @@
 		pstmt.setInt(1, fromRow);
 		pstmt.setInt(2, fromRow + pageRows);
 		rs = pstmt.executeQuery();
-		
-		//out.println("쿼리성공<br>");
 %>
 
 <!DOCTYPE html>

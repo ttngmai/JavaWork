@@ -46,18 +46,3 @@ function chkSubmit(){  // 폼 검증
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
