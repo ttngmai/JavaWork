@@ -11,6 +11,8 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import common.D;
 
 // DAO : Data Access Object
@@ -202,4 +204,33 @@ public class WriteDAO {
 		}
 		return cnt;
 	} // end deleteByUid()
+	
+	// 여러개의 bf_uid 의 파일(들)을 제거
+	public int deleteByUid(int[] uids, HttpServletRequest request) throws SQLException {
+		if(uids == null || uids.length == 0) return 0;
+
+		int cnt = 0;
+		// 101, 204, 319번 파일을 지우려면?
+		// DELETE FROM test_file WHERE bf_uid IN(101, 204, 319);
+		try {
+			StringBuffer sql = new StringBuffer("DELETE FROM test_file WHERE bf_uid IN (");
+			for(int uid : uids) {
+				sql.append(uid + ",");
+			}
+			sql.deleteCharAt(sql.lastIndexOf(",")); // 맨 끝의 콤마 삭제
+			sql.append(")");
+			
+			System.out.println("파일삭제: " + sql);
+			
+			stmt = conn.createStatement();
+			cnt = stmt.executeUpdate(sql.toString());
+			
+			// 물리적인 파일 삭제
+			// TODO
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	} // end delteByUid()
 }

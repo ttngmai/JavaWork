@@ -1,0 +1,190 @@
+<!-- 메인 페이지 -->
+<!-- 모든 자료는 myweb 밑에 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LSH : 메인</title>
+	<link href="../CSS/default.css" rel="stylesheet" type="text/css"/>
+	<link href="../CSS/mobile_first.css" rel="stylesheet" type="text/css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../JS/effect.js" type="text/javascript"></script>
+<script src="../JS/login.js" type="text/javascript"></script>
+
+<body>
+	<nav id="topMenu">
+		<div class="menu-l col-m-3">
+			<span class="logo">
+				<a href="index.html"><img src="../img/logo.png" alt="Logo"></a>
+			</span>
+		</div>
+		<div class="menuList col-m-6">
+			<span><a href="#">꽃다발</a></span>
+			<span><a href="#">소품</a></span>
+			<span><a href="#">클래스</a></span>
+			<span><a href="event_page.html">EVENT</a></span>
+		</div>
+		<div class="menu-r col-m-3">
+			<span><a class="login" href="#">Login</a></span>
+			<span><a href="signIn.html">회원가입</a></span>
+		</div>
+	</nav>
+
+	<div id="loginModal" class="modal">
+		<form class="modalContent" action="https://www.w3schools.com/action_page.php" method="get">
+
+			<div class="header">
+				<div><span>로그인</span></div>
+				<span class="close">&times;</span>
+				<img src="../img/avatar.png" class="avatar" alt="Avatar">
+			</div>
+
+			<div id="container">
+				<label for="userID"></label>
+				<input type="text" placeholder="아이디" name="userID" required>
+				<label for="pswd"></label>
+				<input type="password" placeholder="비밀번호" name="pswd" required>
+
+				<div class="middle">
+					<a class="float-l" href="signIn.html">회원가입</a>
+					<a class="float-r" href="#">내 계정 찾기</a>
+				</div>
+
+				<button class="loginBtn" type="submit">Login</button>
+				<button type="button" class="kakaoLoginBtn">카카오 로그인</button>
+				<button type="button" class="naverLoginBtn">네이버 로그인</button>
+				<button type="button" class="facebookLoginBtn">페이스북 로그인</button>
+			</div>
+		</form>
+	</div>
+
+	<div id="banner-s">
+		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FP7HqX%2FbtqD5JFZ4G9%2FAdLzVfu42dABNgtvnI2qik%2Fimg.jpg">
+		<h2>MOTHER’S DAY PLANTS & GIFTS</h2>
+	</div>
+
+	<div id="banner" class="col-m-12">
+		<img src="https://assets.eflorist.com/site/EF-9689/Category%20Headers/MOTHERSDAY-MAIN-BANNER-NODELWILL.jpg">
+	</div>
+
+	<div id="recommend" class="col-m-12">
+		<h2>We recommend</h2>
+
+		<div class="item col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fc8u5qO%2FbtqEbuCRsBq%2FD2lK8YbDky6KkyLGWkTn01%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>
+		
+		<div class="item col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdBj5td%2FbtqEbvIz4cP%2FDEZp4rP1DDZ08AxLcGChjK%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>
+
+		<div class="item a-m col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbmp9JN%2FbtqEbupk6xD%2F2fHOw83qTno71soYqCgpf0%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>	
+	</div>
+
+	<div id="special" class="col-m-12">
+		<h2>Special Order</h2>
+
+		<div class="item col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbB7lmR%2FbtqEbPUjLCk%2F8IDwEvRsl4mGO2eQTpLBEK%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>
+
+		<div class="item col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcVJuFe%2FbtqEcU8qe5m%2FiQuQ3eUfoEgj6H37mWuON1%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>
+
+		<div class="item a-m col-m-3">
+			<div class="itemImg">
+				<div class="hoverEffect1"></div>
+				<div class="hoverEffect2"></div>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FnMRDT%2FbtqEcTBHOmh%2FWU2qj6ObW9lf4kmUsVvgj0%2Fimg.jpg">
+				<span class="text">
+					<p>item1</p>
+					<p class="price">1원</p>
+				</span>
+			</div>
+			<div class="itemInfo col-m-3">
+				<p>item1</p>
+				<p class="price">1원</p>
+			</div>
+		</div>
+	</div>
+	
+	<input type="checkbox" id="menuIcon">
+	<label for="menuIcon">
+		<span></span>
+		<span></span>
+		<span></span>
+	</label>
+	<div id="sidebar">
+		<div><a href="#">꽃다발</a></div>
+		<div><a href="#">소품</a></div>
+		<div><a href="#">클래스</a></div>
+		<div><a href="event_page.html">Event</a></div>
+	</div>
+</body>
+</html>
