@@ -99,3 +99,32 @@ public class WriteController extends HttpServlet {
 	} // end actionDo()
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

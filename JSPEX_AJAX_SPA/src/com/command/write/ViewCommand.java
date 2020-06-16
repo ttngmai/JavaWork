@@ -32,7 +32,7 @@ public class ViewCommand implements Command {
 					status = "OK";
 				}
 				
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다  
+			} catch (SQLException e) {  
 				//e.printStackTrace();
 				message.append("[트랜잭션 에러:" + e.getMessage() + "]");
 			} catch (Exception e) {
@@ -43,6 +43,18 @@ public class ViewCommand implements Command {
 		request.setAttribute("list", arr);
 		request.setAttribute("status", status);
 		request.setAttribute("message", message.toString());
+
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

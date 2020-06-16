@@ -55,7 +55,7 @@ public class AjaxController extends HttpServlet {
 			new AjaxListCommand().execute(request, response);
 			break;
 			
-		case "/writeOk.ajax": // C 글 작성
+		case "/writeOk.ajax": // C 글작성
 			new WriteCommand().execute(request, response);
 			new AjaxResultCommand().execute(request, response);
 			break;

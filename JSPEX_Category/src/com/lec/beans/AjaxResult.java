@@ -1,19 +1,12 @@
 package com.lec.beans;
 
-public class AjaxWriteResult {
+public class AjaxResult {
+	
 	private int count;   // 데이터 개수
 	private String status;  // 처리 결과
 	private String message;  // 결과 메세지
 	
-	/*
-	{
-		count : ○○○,
-		status : ○○○,
-		message : ○○○
-	}
-	 */
-	
-	public AjaxWriteResult() {}
+	public AjaxResult() {}
 	
 	public int getCount() {
 		return count;
@@ -33,7 +26,5 @@ public class AjaxWriteResult {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
-	
 	
 }

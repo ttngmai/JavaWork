@@ -17,19 +17,33 @@ public class UpdateCommand implements Command {
 		
 		// ajax response 에 필요한 값들
 		StringBuffer message = new StringBuffer();
-		String status = "FAIL"; // 기본 FAIL
+		String status = "FAIL";   // 기본 FAIL
 
 		//입력한 값을 받아오기
-		int uid = Integer.parseInt(request.getParameter("uid"));
+		String param = request.getParameter("uid");
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
 
-		// 유효성 체크  null 이거나, 빈문자열이면 이전화면으로 돌아가기
-		if(subject != null && subject.trim().length() > 0){			
+		if(param == null) {
+			message.append("[유효하지 않은 parameter 0 or null]");
+		} else if (subject == null || subject.trim().length() == 0) {
+			message.append("[유효하지 않은 parameter : 글 제목 필수]");
+		} else {
 			try {			
+				int uid = Integer.parseInt(param);
+				
 				cnt = dao.update(uid, subject, content);
+				status = "OK";
+				
+				if(cnt == 0) {
+					message.append("[0 update]");
+				}
+				
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
+				message.append("[트랜잭션 에러:" + e.getMessage() + "]");
+			} catch (Exception e) {
+				message.append("[유효하지 않은 parameter] " + param);
 			}
 
 		} // end if
@@ -37,6 +51,17 @@ public class UpdateCommand implements Command {
 		request.setAttribute("result", cnt);
 		request.setAttribute("status", status);
 		request.setAttribute("message", message.toString());
+
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

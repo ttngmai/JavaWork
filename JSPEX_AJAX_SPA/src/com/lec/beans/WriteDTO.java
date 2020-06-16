@@ -2,33 +2,31 @@ package com.lec.beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-// DTO : Data Transfer Object
-// 데이터를 담아 나르기 위한 객체
+// DTO : Data Trasfer Object
+//    데이터를 담아 나르기 위한 객체
 
-// 게시글 DTO, 회원 DTO, ... 필요한 데이터 객체들 만큼 정의
-
-// 객체
+// 게시글DTO, 회원DTO, ... 필요한 데이터 객체들 만큼 정의
+// Bean 객체
 
 public class WriteDTO {
-	private int uid; // wr_uid
-	private String subject; // wr_subject
-	private String content; // wr_content
-	private String name; // wr_name
+	private int uid;     // wr_uid
+	private String subject;   //wr_subject
+	private String content;   //wr_content
+	private String name;  // wr_name
 	@JsonProperty("viewcnt")
-	private int viewCnt; // wr_viewcnt
+	private int viewCnt;   // wr_viewcnt
 	@JsonProperty("regdate")
-	private String regDate; // wr_regdate
+	private String regDate;   // wr_regdate
 	
 	// 개발시..
-	// 다음 3가지 네이밍은 일치시켜주는 것이 좋다.
-	// 클래스 필드명 = DB 필드명 = form name명
+	// 다음 3가지 네이밍은 일치시켜주는 것이 좋다 .
+	// 클래스 필드명 = DB 필드명  = form 의 name명
 	
-	// 기본생성자, 매개변수 생성자, getter/setter
+	// 기본생성자, 매개변수 생성자
 	public WriteDTO() {
 		super();
 		System.out.println("WriteDTO() 객체 생성");
 	}
-
 	public WriteDTO(int uid, String subject, String content, String name, int viewCnt) {
 		super();
 		this.uid = uid;
@@ -38,7 +36,8 @@ public class WriteDTO {
 		this.viewCnt = viewCnt;
 		System.out.println("WriteDTO(uid, subject, content, name, viewCnt) 객체 생성");
 	}
-
+	
+	// getter / setter
 	public int getUid() {
 		System.out.println("getUid() 호출");
 		return uid;
@@ -91,9 +90,25 @@ public class WriteDTO {
 	// 테스트, 개발용으로 toString() 오버라이딩 하면 좋다.
 	@Override
 	public String toString() {
-		return 
-				"WriteDTO] " + uid + " : " + subject + " : "
-				+ content + " : " + name + " : " + viewCnt + " : " + regDate;
+		return "WriteDTO] " + uid + " : " + subject + " : " 
+			+ content + " : " + name + " : " + viewCnt + " : " + regDate;
 	}
 	
 } // end DTO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
