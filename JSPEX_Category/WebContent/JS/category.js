@@ -1,33 +1,41 @@
-var num = 1;
-
-$(document).ready(function(){
-	loadCategory(num, 0);
+$(document).ready(function() {
+	loadCategory(1, 0);
 });
 
-function loadCategory(depth, parent){
+function loadCategory(depth, parent) {
 	$.ajax({
-		url : "cate_list.ajax?depth=" + depth + "&parent=" + parent
-		, type : "GET"
+		url : "cate_list.ajax"
+		, type : "POST"
+		, dataType : "json"
+		, data : {depth : depth, parent : parent}
 		, cache : false
-		, success : function(data, status){
-			if(status == "success"){
+		, success : function(data, status) {
+			if(status == "success") {
 				
-				if(updateCategory(data)) {
-					$("#mycate > span:nth-child(" + num + ") > select").change(function(){
-						
-						if(($('select').index(this)+3) <= 3) {
-							$("#mycate > span:nth-child(" + $('select').index(this)+3 + ") > select").empty();
-							$("#mycate > span:nth-child(" + $('select').index(this)+3 + ") > select").attr('disabled', true);
+				if(updateCategory(data, depth)) {
+					$("#mycate > span:nth-child(" + depth + ") > select").change(function() { // value 선택 시
+						for(var j = depth+1; j <= 3; j++) {
+							$("#mycate > span:nth-child(" + j + ") > select").empty();
+							$("#mycate > span:nth-child(" + j + ") > select").attr('disabled', true);
 						}
 						
-						var parent = $(this).val();
-						console.log("dept: " + ($('select').index(this)+1) + " select: " + parent);
+						var selectNum = $('select').index(this)+1; // 몇번째 select? (1~3 번째)
+						var parent = $(this).val(); // value 값은? 
 						
-						if(depth < 3){
-							num = $("select").index(this)+2;
-							loadCategory(num, parent);
+						if(parent == 0) { // "--선택하세요--" 선택 시 
+							console.log("dept: " + selectNum + " select: " + parent);
+							depth = selectNum;
+							for(var j = selectNum+1; j <= 3; j++) {
+								$("#mycate > span:nth-child(" + j + ") > select").empty();
+								$("#mycate > span:nth-child(" + j + ") > select").attr('disabled', true);
+							}
+							
+						} else if(depth < 3) { // 유효한 값 선택 시 
+							console.log("dept: " + selectNum + " select: " + parent);
+							depth = selectNum+1;
+							loadCategory(depth, parent);
+							return;
 						}
-						
 					});
 				}
 				
@@ -36,8 +44,8 @@ function loadCategory(depth, parent){
 	});
 }; // end loadCategory()
 
-function updateCategory(jsonObj) {
-	text = "<option value=''>--선택하세요--</option>";
+function updateCategory(jsonObj, depth) {
+	text = "<option value='0'>--선택하세요--</option>";
 	
 	if (jsonObj.status == "OK") {
 
@@ -52,16 +60,14 @@ function updateCategory(jsonObj) {
 			text += "</option>";
 		} // end for
 
-		$("#mycate > span:nth-child(" + num + ") > select").attr('disabled', false);
-		$("#mycate > span:nth-child(" + num + ") > select").html(text);
-
+		$("#mycate > span:nth-child(" + depth + ") > select").attr('disabled', false);
+		$("#mycate > span:nth-child(" + depth + ") > select").html(text);
 		return true;
 		
 	} else {
 		alert(jsonObj.message);
-		
 		return false;
 	}
 	
 	return false;
-} // end updateFirstCategory()
+} // end updateCategory()
