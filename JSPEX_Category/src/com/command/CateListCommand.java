@@ -1,10 +1,13 @@
 package com.command;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lec.beans.AjaxCategoryList;
 import com.lec.beans.CategoryDAO;
 import com.lec.beans.CategoryDTO;
 
@@ -12,52 +15,63 @@ public class CateListCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-
-		CategoryDAO dao = new CategoryDAO();
-		CategoryDTO[] category = null;
 		
-		StringBuffer message = new StringBuffer();
-		String status = "FAIL"; // 기본 status 는 FAIL
+		int depth = 1;  // 디폴트 depth1
+		int parent = 0;  // 디폴트 parent 0
 		
-		int depth; 
-		int parent;
+		String depthParam = request.getParameter("depth");
+		String parentParam = request.getParameter("parent");
 		
-		if(request.getParameter("depth") == null || request.getParameter("parent") == null ||
-				Integer.parseInt(request.getParameter("depth")) == 1 || Integer.parseInt(request.getParameter("parent")) == 0) {
-			try {
-				category = dao.selectFirstCate();
-				if(category == null) {
-					message.append("리스트할 카테고리가 없습니다.");
-				} else {
-					status = "OK";
-				}
-				
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
+		try {			
+			if(depthParam != null) depth = Integer.parseInt(depthParam);
+			if(parentParam != null) parent = Integer.parseInt(parentParam);
+		} catch(Exception e) {
 			
-		} else {
-			try {
-				depth = Integer.parseInt(request.getParameter("depth"));
-				parent = Integer.parseInt(request.getParameter("parent"));
-				
-				category = dao.selectChildCate(depth, parent);
-				if(category == null) {
-					message.append("리스트할 카테고리가 없습니다.");
-				} else {
-					status = "OK";
-				}
-				
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
 		}
 		
-		request.setAttribute("status", status);
-		request.setAttribute("message", message.toString());
+		CategoryDAO dao = new CategoryDAO();
+		CategoryDTO [] dtoArr = null;
 		
-		request.setAttribute("cateList", category);
-
+		try {			
+			if(depth == 1) {
+				// depth 1 만 읽어 들이면 된다.
+				dtoArr = dao.selectByDepth(depth);
+			} else {
+				// depth >= 2 이면 parent 값에 따라 읽어 들이기
+				dtoArr = dao.selectByDepthParent(depth, parent);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			String jsonString = "";
+			AjaxCategoryList result = new AjaxCategoryList();
+			
+			if(dtoArr == null || dtoArr.length == 0) {
+				result.setStatus("FAIL");
+				result.setCount(0);
+				result.setMessage("0개의 데이터");
+			} else {
+				result.setStatus("OK");
+				result.setCount(dtoArr.length);
+				result.setList(Arrays.asList(dtoArr));
+				result.setMessage("");
+			}
+			
+			ObjectMapper mapper = new ObjectMapper();
+			
+			jsonString = mapper.writerWithDefaultPrettyPrinter()
+					.writeValueAsString(result);
+			
+			response.setContentType("application/json; charset=utf-8");
+			response.getWriter().write(jsonString);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	} // end execute()
 
-} // end Command
+}

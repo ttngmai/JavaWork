@@ -11,106 +11,95 @@ import java.util.ArrayList;
 import common.D;
 
 public class CategoryDAO {
-	Connection conn = null;
-	Statement stmt = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
 	
-	public CategoryDAO() {
+	Connection conn;
+	PreparedStatement pstmt;
+	Statement stmt;
+	ResultSet rs;
+	
+	// DAO 객체가 생성될때 Connection 도 생성된다
+	public CategoryDAO(){
 		try {
 			Class.forName(D.DRIVER);
 			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("WriteDAO 생성, 데이터 베이스 연결!");
-		} catch(Exception e) {
+			System.out.println("CategoryDAO생성, 데이터베이스 연결!!");
+		} catch (Exception e) {			
 			e.printStackTrace();
-		}		
-	} // 생성자
+		} // end try
+	}// 생성자
 	
-	// DB 자원 반납 메소드,
-	public void close() throws SQLException {
+	// DB 자원 반납 메소드, 만들어놓으면 편함..
+	public void close() throws SQLException{
 		if(rs != null) rs.close();
 		if(pstmt != null) pstmt.close();
 		if(stmt != null) stmt.close();
 		if(conn != null) conn.close();
-	} // end close()
+	} // end close();
 	
-	public CategoryDTO[] selectFirstCate() throws SQLException {
-		CategoryDTO[] arr = null;
+	// ResultSet --> DTO배열로 리턴
+	public CategoryDTO[] createArray(ResultSet rs) throws SQLException{
+		ArrayList<CategoryDTO> list = new ArrayList<CategoryDTO>();
 		
-		try {
-			pstmt = conn.prepareStatement(D.SQL_GET_FIRST_CATEGORY);
-			rs = pstmt.executeQuery();
-			arr = createArray2(rs);
-		} finally {
-			close();
-		}
-		
-		return arr;
-	} // end selectFirstCate()
-	
-	public CategoryDTO[] selectChildCate(int depth, int parent) throws SQLException {
-		CategoryDTO[] arr = null;
-		
-		try {
-			pstmt = conn.prepareStatement(D.SQL_CATEGORY_BY_DEPTH_N_PARENT);
-			pstmt.setInt(1, depth);
-			pstmt.setInt(2, parent);
-			rs = pstmt.executeQuery();
-			arr = createArray(rs);
-		} finally {
-			close();
-		}
-		
-		return arr;
-	} // end selectChildCate()
-	
-	public CategoryDTO[] createArray(ResultSet rs) throws SQLException {
-		CategoryDTO[] arr = null;
-		
-		ArrayList<CategoryDTO> cateList = new ArrayList<CategoryDTO>();
-		
-		while(rs.next()) {
+		while(rs.next()){
 			int uid = rs.getInt("uid");
 			String name = rs.getString("name");
 			int depth = rs.getInt("depth");
-			int parent = rs.getInt("parent");
-			int order = rs.getInt("order");
+			int parent = rs.getInt("parent"); 
+			int order = rs.getInt("order"); 
 			
 			CategoryDTO dto = new CategoryDTO(uid, name, depth, parent, order);
-			cateList.add(dto);
-		} // end while
-		
-		int size = cateList.size();
-		
-		if(size == 0) return null;
-		
-		arr = new CategoryDTO[size];
-		cateList.toArray(arr);	
-		return arr;
-	} // end createArray()
-	
-	public CategoryDTO[] createArray2(ResultSet rs) throws SQLException {
-		CategoryDTO[] arr = null;
-		
-		ArrayList<CategoryDTO> cateList = new ArrayList<CategoryDTO>();
-		
-		while(rs.next()) {
-			int uid = rs.getInt("uid");
-			String name = rs.getString("name");
-			int depth = rs.getInt("depth");
-			int order = rs.getInt("order");
-			
-			CategoryDTO dto = new CategoryDTO(uid, name, depth, order);
-			cateList.add(dto);
-		} // end while
-		
-		int size = cateList.size();
+			list.add(dto);
+		}//end while		
+		int size = list.size();
 		
 		if(size == 0) return null;
 		
-		arr = new CategoryDTO[size];
-		cateList.toArray(arr);	
+		CategoryDTO arr[] = new CategoryDTO[size];
+		list.toArray(arr); //리스트에 저장된 데이터를 배열 객체에 복사
 		return arr;
 	} // end createArray()
+
 	
-}
+	// 전체 SELECT
+		public CategoryDTO[] select() throws SQLException{
+			CategoryDTO arr[] = null;
+			try{
+				pstmt = conn.prepareStatement(D.SQL_CATEGORY_ALL);
+				rs = pstmt.executeQuery();
+				arr = createArray(rs);
+			}finally{
+				close();
+			} // end try
+			return arr;
+		} // end select()
+	
+		// 특정 depth
+		public CategoryDTO[] selectByDepth(int depth) throws SQLException{
+			CategoryDTO arr[] = null;
+			try{
+				pstmt = conn.prepareStatement(D.SQL_CATEGORY_BY_DEPTH);
+				pstmt.setInt(1, depth);
+				rs = pstmt.executeQuery();
+				arr = createArray(rs);
+			}finally{
+				close();
+			} // end try
+			return arr;
+		} // end select()
+		
+		// 특정 depth + 특정 parent
+		public CategoryDTO[] selectByDepthParent(int depth, int parent) throws SQLException{
+			CategoryDTO arr[] = null;
+			try{
+				pstmt = conn.prepareStatement(D.SQL_CATEGORY_BY_DEPTH_N_PARENT);
+				pstmt.setInt(1, depth);
+				pstmt.setInt(2, parent);
+				rs = pstmt.executeQuery();
+				arr = createArray(rs);
+			}finally{
+				close();
+			} // end try
+			return arr;
+		} // end select()
+		
+} // end DAO
