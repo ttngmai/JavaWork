@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
 	<!-- bean 객체 정의 -->
-	<bean id="messageBean" class="com.lec.spring.MessageEng"/>
+	<bean id="messageBean" class="com.lec.spring.MessageKor"/>
 	<!-- 
 		com.lec.spring.MessageKor messageBean = new com.lec.spring.MessageKor();
-	 -->
+	-->
 
 </beans>

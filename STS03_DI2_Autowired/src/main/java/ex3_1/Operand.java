@@ -26,16 +26,3 @@ public class Operand {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
