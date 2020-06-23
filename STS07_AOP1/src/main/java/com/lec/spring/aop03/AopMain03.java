@@ -27,8 +27,6 @@ public class AopMain03 {
 		serviceEx32.doWorking();  // 7
 		serviceEx32.quitAction();  // 8
 		
-		
-		
 		ctx.close();
 		System.out.println("Main 종료");
 	} // end main

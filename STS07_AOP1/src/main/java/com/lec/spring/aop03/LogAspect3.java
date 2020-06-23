@@ -27,4 +27,5 @@ public class LogAspect3 {
 	public void beforeAdvice() {
 		System.out.print("[Advice] ");
 	}
+	
 }

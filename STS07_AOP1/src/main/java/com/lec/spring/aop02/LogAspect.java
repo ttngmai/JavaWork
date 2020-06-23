@@ -32,13 +32,12 @@ public class LogAspect {
 	
 	//@After("pc2()")
 	//@After("within(com.lec.spring.aop02.*)")
-	//@After("execution(* com.lec.spring.aop02.MyService22.*(..))")
+	//@After("c(* com.lec.spring.aop02.MyService22.*(..))")
 	@After("execution(* com.lec.spring.aop02.*2.*(..))")
 	public void afterAdvice() {
 		System.out.print("[After] ");
 		new Logger().logOut();
 	}
-	
 	
 	// Around advice : 메소드 실행을 제어하는 가장 강력한 코드
 	//      직접 해당 메소드를 호출하고 결과나 예외 처리도 가능.
@@ -60,18 +59,7 @@ public class LogAspect {
 			long et = System.currentTimeMillis();  // 종료시간 기록
 			System.out.println("[Around] " + signatureStr + " 종료, 경과시간: " + (et - st));
 		}
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
 

@@ -7,7 +7,6 @@ package com.lec.beans;
 
 public class Logger {
 
-	
 	public void logIn() {
 		System.out.println("## 로그인 처리 ##");
 		

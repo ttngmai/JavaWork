@@ -21,9 +21,7 @@ public class AopMain02 {
 		service22.doAction();
 		System.out.println();
 		
-		
 		((MyService21)service21).hahaha();
-		
 		
 		ctx.close();
 		System.out.println("Main 종료");
