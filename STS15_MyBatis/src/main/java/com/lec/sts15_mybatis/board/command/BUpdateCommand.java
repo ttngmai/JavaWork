@@ -14,13 +14,15 @@ public class BUpdateCommand implements BCommand {
 	public void execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		BWriteDTO dto = (BWriteDTO)map.get("dto");
+
 //		BWriteDAO dao = new BWriteDAO();
 //		int cnt = dao.update(dto);
 //		model.addAttribute("result", cnt);
 		
-		// MyBatis 사용
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		model.addAttribute("result", dao.update(dto));
+		
+		//model.addAttribute("result", dao.update(dto));
+		model.addAttribute("result", dao.update(dto.getUid(), dto));
 	}
 
 }

@@ -127,17 +127,17 @@
 		</dependency>      
 		
 		<!-- ojdbc6 -->
-	       <dependency>
-	         <groupId>com.oracle</groupId>
-	         <artifactId>ojdbc6</artifactId>
-	         <version>11.2.0.3</version>
-	      </dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+		   	<artifactId>ojdbc6</artifactId>
+		   	<version>11.2.0.3</version>
+		</dependency>
 	      
 	    <!-- spring jdbc 사용 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-		<version>${org.springframework-version}</version>
+			<version>${org.springframework-version}</version>
 		</dependency>
 	</dependencies>
     <build>
